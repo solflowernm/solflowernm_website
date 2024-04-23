@@ -1,0 +1,36 @@
+.modal-overlay{ 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1000;
+}
+.modal{ 
+    max-height: 80%;
+    overflow: auto; 
+    opacity: 1; 
+    position: fixed; 
+    width: auto;
+    top: 2%;
+    left: 0;
+    background-color: rgb(40, 76, 40);
+    padding: 20px; 
+    z-index: 1000; 
+    margin: 20px; 
+}
+#close-modal{ 
+    background-color: rgb(89, 144, 41);
+    color: lightblue; 
+    font-size: 20px;
+    border-radius: 20px; 
+    position: absolute; 
+    top: 0;
+    right: 0; 
+}
+.scrollable-modal{ 
+    overflow-y: scroll;
+    height: 100%;
+}

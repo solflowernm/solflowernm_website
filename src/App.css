@@ -1,0 +1,253 @@
+body{ 
+  position: relative; 
+  margin: 0;
+  min-height: 100%; 
+  padding-bottom: 10rem; 
+  background-color: rgb(64, 94, 67);
+  scroll-behavior: smooth;
+      min-height: 100vh;
+  background-image: "./"
+}
+a{ 
+  color: lightgreen; 
+}
+.wrapper-contact{ 
+  display:flex;
+  margin-right: 10px; 
+}
+.home_img{
+  width: 50%; 
+  height: auto; 
+  margin-right: 20px;  
+  float: left; 
+  border-radius: 20px; 
+  padding: 10px; 
+}
+.image-gallery-wrapper img {
+  width: 100px; 
+  height: 300px;
+  object-fit: cover;
+}
+.scepter-testing{ 
+  color: lightblue; 
+}
+.warning{ 
+  color: rgb(221, 36, 36); 
+}
+.FDA-warning{ 
+  border-radius: 14px;
+  padding: 10px; 
+  background-color: rgb(24, 41, 29);
+}
+.entertainment{ 
+  font-size: 12px;
+  padding-right: 10px;  
+  float:right;
+  color: rgb(161, 207, 176); 
+}
+
+.table_top:hover{ 
+  background-color: rgb(192, 255, 201);
+}
+table{ 
+  cursor: pointer; 
+  width: 100%; 
+  justify-content: center;
+  text-align: center;
+}
+thead{ 
+  width: 100%;
+  border: 1px solid pink; 
+}
+th{ 
+  width: 100%; 
+  border: 1px solid pink; 
+}
+td:hover{ 
+  background-color: rgb(248, 153, 169);
+}
+td{ 
+  /* width: 100%;  */
+  border: 1px solid pink; 
+}
+.icons{ 
+  position: fixed; 
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+.icons_individual{ 
+  height: 50px;
+}
+.icons_individual:hover{ 
+  filter:hue-rotate(-20deg);
+}
+h1{ 
+  text-align:left;
+  opacity: 0.8;
+  color: rgb(224, 229, 94);
+  font-style:italic;
+  font-family: ultra;
+  font-weight: 100;
+  letter-spacing: 12px;
+}
+h2{ 
+  text-align:left;
+  opacity: 0.8;
+  color: rgb(229, 255, 83);
+  font-style:italic;
+  font-family: ultra;
+  font-weight: 100;
+  letter-spacing: 4px;
+}
+h1:hover{ 
+  opacity: 0.8;
+}
+
+.cropped-image{ 
+  width: 300px; 
+  height: 300px; 
+  object-fit: cover;
+}
+.navigation_container{ 
+  position: sticky; 
+  top: 0; 
+  display: inline-block; 
+  align-content: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+  height: 3%;
+  width: 100%;
+  background-color: rgb(64, 94, 67);
+  z-index:1;
+  padding-bottom: 20px; 
+}
+#nav_bar{ 
+  flex: 1; 
+  clear: both; 
+}
+.nav_buttons{ 
+  display: inline-block;
+  opacity: 0.5;
+  text-align: center;
+  color: white; 
+  /* border: 2px solid rgb(255, 255, 255);  */
+  width: 20%;
+  z-index: 1;
+  
+}
+.nav_buttons:hover{ 
+  opacity: 0.8;
+  /* background-color: rgb(211, 125, 125);  */
+}
+.nav_buttons.active{ 
+  font-size: 10px; 
+  background-color:  rgb(52, 224, 210); 
+} 
+
+.home_statements{ 
+  text-align: center;
+  letter-spacing: 8px; 
+  font-size: 10;  
+  color: rgb(176, 220, 176); }
+.home_statements:hover{ 
+  cursor: pointer;
+}
+
+.center_points{ 
+  text-align: center;
+}
+
+
+.page_content{ 
+  margin-left: 7%;
+  margin-right: 7%;
+  opacity: 0.6;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px; 
+  flex: 2; 
+  display: block; 
+  color: rgb(255, 255, 255); 
+  background-color: rgb(47, 118, 65);
+  padding: 20px;
+  border-radius: 20px; 
+}
+
+.page_content:hover{ 
+  cursor: default;
+  opacity: 0.9;
+}
+.page_content.active{ 
+  display: block;
+  padding-top: 1px;
+}
+
+#solflowernm_logo{ 
+  padding-left: 10px; 
+}
+
+@media (max-width: 600px){ 
+  .home_img{
+    width: 30%; 
+    height: auto; 
+    margin-right: 2px;  
+    float: left; 
+    border-radius: 20px; 
+  }
+  .about_img{ 
+    float:right;
+    width: 50%; 
+    height: auto; 
+    border-radius: 20px; 
+  }
+  .nav_buttons{
+    font-size: 12px; 
+  }
+  .page_content{ 
+    font-size: 14px; 
+  }
+  h1{ 
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px){ 
+  .nav_buttons{ 
+    font-size: 20px; 
+  }
+  .page_content{ 
+    font-size: 23px; 
+  }
+  h1{ 
+    font-size: 40px; 
+  }
+}
+
+.footer{ 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  min-height: 10vh;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 13px; 
+  text-align: center;
+  background-color: rgb(83, 143, 96);
+  width: 100%; 
+  margin: 0; 
+  margin-top: auto; 
+
+}
+footer{ 
+  margin-top: auto; 
+}
+.footer p{ 
+  padding: 0; 
+  margin: 0; 
+  color: rgb(162, 230, 180); 
+}
+
+@font-face{ 
+  font-family: ultra; 
+  src: url(/Ultra-Regular.ttf)
+}
