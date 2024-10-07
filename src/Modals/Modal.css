@@ -7,8 +7,10 @@
     background-color: black;
     opacity: 0.5;
     z-index: 1000;
+
 }
 .modal{ 
+    display: inline-block; 
     max-height: 80%;
     overflow: auto; 
     opacity: 1; 
@@ -16,14 +18,60 @@
     width: auto;
     top: 2%;
     left: 0;
-    background-color: rgb(40, 76, 40);
     padding: 20px; 
     z-index: 1000; 
     margin: 20px; 
+    overflow-x: hidden;
+
 }
+.label_img_container{ 
+    display: grid; 
+
+
+}
+h1{ 
+    color: white; 
+}
+.label_img{ 
+    display: block; 
+    width: 33%; 
+    height: auto; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    display:none; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+  }
+.sativa{ 
+    color: rgb(235, 107, 95); 
+    background-color: rgb(113, 63, 51);
+}
+.indica{ 
+    color: rgb(131, 199, 208); 
+    background-color: rgb(35, 73, 90);
+}
+.hybrid{ 
+    background-color: rgb(97, 137, 81);
+}
+
+.sativa_table{ 
+    color: rgb(253, 197, 174);
+}
+.indica_table{ 
+    color: rgb(171, 226, 255);
+}
+.hybrid_table{ 
+    color: rgb(150, 255, 149);
+}
+
 #close-modal{ 
-    background-color: rgb(89, 144, 41);
-    color: lightblue; 
+    /* background-color: rgb(89, 144, 41); */
+    color: white; 
     font-size: 20px;
     border-radius: 20px; 
     position: absolute; 
@@ -31,6 +79,8 @@
     right: 0; 
 }
 .scrollable-modal{ 
+    position: relative; 
     overflow-y: scroll;
     height: 100%;
+    overflow-y: hidden; 
 }

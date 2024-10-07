@@ -1,0 +1,13 @@
+.radio_container{ 
+    padding: 1px; 
+    border-radius: 20px;
+    background-color: rgb(108, 129, 136);
+    text-align: center;
+}
+.radio_sessions_container{ 
+    padding: 15px; 
+    border-radius: 15px;
+    margin-top: 20px; 
+    text-align: center;
+    background-color: rgb(116, 75, 116);
+}

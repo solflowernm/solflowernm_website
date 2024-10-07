@@ -1,4 +1,6 @@
+
 body{ 
+  background-image: url(images/background.png);
   position: relative; 
   margin: 0;
   min-height: 100%; 
@@ -6,7 +8,8 @@ body{
   background-color: rgb(64, 94, 67);
   scroll-behavior: smooth;
       min-height: 100vh;
-  background-image: "./"
+  background-image: "./";
+  overflow-x: hidden;
 }
 a{ 
   color: lightgreen; 
@@ -16,10 +19,10 @@ a{
   margin-right: 10px; 
 }
 .home_img{
-  width: 50%; 
+  width: 35%; 
   height: auto; 
   margin-right: 20px;  
-  float: left; 
+  float: right; 
   border-radius: 20px; 
   padding: 10px; 
 }
@@ -85,7 +88,7 @@ td{
 h1{ 
   text-align:left;
   opacity: 0.8;
-  color: rgb(224, 229, 94);
+  color: rgb(94, 168, 229);
   font-style:italic;
   font-family: ultra;
   font-weight: 100;
@@ -94,7 +97,7 @@ h1{
 h2{ 
   text-align:left;
   opacity: 0.8;
-  color: rgb(229, 255, 83);
+  color: rgb(102, 211, 178);
   font-style:italic;
   font-family: ultra;
   font-weight: 100;
@@ -110,6 +113,7 @@ h1:hover{
   object-fit: cover;
 }
 .navigation_container{ 
+  border-radius: 20px; 
   position: sticky; 
   top: 0; 
   display: inline-block; 
@@ -118,10 +122,15 @@ h1:hover{
   cursor: pointer;
   height: 3%;
   width: 100%;
-  background-color: rgb(64, 94, 67);
+  background-color: rgb(81, 164, 58);
   z-index:1;
+  padding-top: 10px; 
   padding-bottom: 20px; 
 }
+/* .navigation_container:hover{ 
+
+  background-color: rgb(64, 94, 67, .5);
+} */
 #nav_bar{ 
   flex: 1; 
   clear: both; 
@@ -138,7 +147,7 @@ h1:hover{
 }
 .nav_buttons:hover{ 
   opacity: 0.8;
-  /* background-color: rgb(211, 125, 125);  */
+  /* background-color: rgb(64, 94, 67, .8); */
 }
 .nav_buttons.active{ 
   font-size: 10px; 
@@ -162,20 +171,20 @@ h1:hover{
 .page_content{ 
   margin-left: 7%;
   margin-right: 7%;
-  opacity: 0.6;
+  opacity: 0.95;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 20px; 
   flex: 2; 
   display: block; 
   color: rgb(255, 255, 255); 
-  background-color: rgb(47, 118, 65);
+  background-color: rgb(66, 67, 109);
   padding: 20px;
-  border-radius: 20px; 
+  margin-top: 20px; 
+  border-radius: 12px; 
 }
-
 .page_content:hover{ 
   cursor: default;
-  opacity: 0.9;
+  /* opacity: 1; */
 }
 .page_content.active{ 
   display: block;
@@ -232,19 +241,24 @@ h1:hover{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 13px; 
   text-align: center;
-  background-color: rgb(83, 143, 96);
+  background-color: rgb(79, 93, 65);
+  
   width: 100%; 
   margin: 0; 
   margin-top: auto; 
-
-}
-footer{ 
-  margin-top: auto; 
+  padding: 0; 
+  padding-bottom:20px; 
 }
 .footer p{ 
-  padding: 0; 
+  padding: 10px; 
   margin: 0; 
-  color: rgb(162, 230, 180); 
+  color: rgb(193, 187, 187); 
+}
+.footer a{ 
+  color: lightblue; 
+  background-color: rgb(90, 65, 65);
+  padding: 4px; 
+  text-decoration: none;
 }
 
 @font-face{ 

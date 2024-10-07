@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import instagramLogo from './images/instagram.png'
 import youtubeLogo from './images/youtube.png'
+
 class LogoBar extends Component{ 
     
     render(){ 

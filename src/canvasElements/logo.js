@@ -1,12 +1,18 @@
+import { distance } from 'three/examples/jsm/nodes/Nodes.js';
 import hybrid_cutout from './hybrid.png'
+
 
 function initCanvas(){ 
     
 let canvas = document.getElementById('solflowernm_logo')
 let ctx = canvas.getContext('2d')
 
-
-
+//animation1 variables 
+let animationActive = true; 
+let crestPosition = 0; 
+let waveMaxHeight = 10
+let waveAttack = .3 //increment per frame till max
+let waveDecay = .3 //decrement per frame till 0.
 //hover effects
 let increasingSize = false 
 let decreaseingSize = false
@@ -20,6 +26,11 @@ let y = 0
 let size = 50
 let setSpeed = .4
 let speed = 1/setSpeed
+
+//animation where letters go out from center on website load
+let initAnimationAttack = 10; 
+let initAnimationSustain = 10; 
+let initAnimationDecay = 10; 
 
 let globAngleChange = -Math.PI/2
 
@@ -49,16 +60,23 @@ let text = [
     `sungrown cannabis `
 ]
 
+let layerTextData = []
+text.forEach(layer => { 
+    let curLayerData = []
+    for(let i = 0; i < layer.length; i++){ 
+        curLayerData.push({
+            letter: layer[i],
+            height: 0, 
+            size: null,
+            color: null
+        })
+    }
+    layerTextData.push(curLayerData)
+})
 //hover effect for the logo text
-
-
 
 canvas.width = size * 2 + canvasPadding
 canvas.height = size * 2 + canvasPadding
-
-
-
-
 
 canvas.addEventListener("mouseover", (e) => { 
    
@@ -82,37 +100,75 @@ function renderTextLayers(radius, angle){
     let offSetY = canvas.height/2 
     for(let i = 0 ; i < text.length; i++){
         let increment = (Math.PI * 2)/text[i].length;
-        let split = text[i].split('')
         for(let j = 0; j < text[i].length; j++){ 
             ctx.save()
+            // layerTextData[i][j].letter === ' ' ? i++ : null
+
+            let distanceToCrest = Math.abs(crestPosition - j); 
+            let dimFact = .001
+            // layerTextData[i][j].height = (distanceToCrest * (1 + Math.E ** distanceToCrest))/distanceToCrest * dimFact
+            ctx.save()
+
+            let waveHeight = 0
             i < 1 ? ctx.font = '9px Arial' : ctx.font = "12px Arial"
-            let textX = Math.cos(angle) * radius/(i + 1.2) + offSetX
-            let textY = Math.sin(angle) * radius/(i + 1.2) + offSetY
+            let textX; let textY
+            if(animationActive){ 
+                textX = Math.cos(angle) * (radius + layerTextData[i][j].height)/(i + 1.2) + offSetX 
+                textY = Math.sin(angle) * (radius + layerTextData[i][j].height)/(i + 1.2) + offSetY
+    
+            }else{ 
+                textX = Math.cos(angle) * (radius)/(i + 1.2) + offSetX 
+                textY = Math.sin(angle) * (radius)/(i + 1.2) + offSetY
+    
+            }
 
             i < 1 ? ctx.fillStyle = layerOneColor : ctx.fillStyle = layerTwoColor; 
+
+            ctx.save()
+
             ctx.translate(textX, textY)
             ctx.rotate(angle + Math.PI/2)
-            ctx.fillText(text[i][j], 0, 0)
+            ctx.fillText(layerTextData[i][j].letter, 0, 0)
             angle += increment
+            ctx.restore()
+            ctx.restore()
             ctx.restore()
         }
         angle = globAngleChange; 
+        crestPosition >= layerTextData[i].length + 7 ? animationActive = false :  crestPosition+=.1
+        // crestPosition >= layerTextData[i].length ? crestPosition = 0 : null
+               crestPosition
     }
+
 }
 
-let imageAdjustX = 0
-let imageAdjustY = 2.7
 function logo(angle){ 
+    ctx.beginPath(); 
+    ctx.save()
+    ctx.fillStyle = "white"; 
+    ctx.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, Math.PI * 2)
+    ctx.fill(); 
+    ctx.restore()
+
+    ctx.beginPath(); 
+    ctx.save()
+    ctx.fillStyle = "rgb(0, 100, 60)"; 
+    ctx.arc(canvas.width/2, canvas.height/2, canvas.width/2 - 2, 0, Math.PI * 2)
+    ctx.fill(); 
+    ctx.restore()
+
+
+    renderTextLayers(canvas.width/2, angle)
+
     let curX = canvas.width/2
     let curY = canvas.height/2
 
-    renderTextLayers(canvas.width/2, angle)
     //tree image 
     ctx.save() 
     ctx.clip()
     // ctx.drawImage(tree, canvasPadding * .5 - imageAdjustX, canvasPadding *.5 - imageAdjustY, size * 2, size * 2 )
     ctx.drawImage(tree, 0, 0, canvas.width, canvas.height)
-    ctx.globalCompositeOperation = 'source-in';
+    ctx.globalCompositeOperation = 'destination-in';
     
     // Set the fill color
     ctx.fillStyle = 'rgb(219, 201, 81)';
@@ -121,8 +177,9 @@ function logo(angle){
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Reset the composite mode
-    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalCompositeOperation = 'destination-out';
     ctx.restore()
+
     //layer one
     ctx.save()
     ctx.beginPath()
@@ -142,7 +199,6 @@ function logo(angle){
     // ctx.stroke()
     ctx.restore()
 
-    renderTextLayers(canvas.width/2, angle)
 }
 function animate(){ 
     if(increasingSize){ 
@@ -162,6 +218,7 @@ function animate(){
     logo(globAngleChange)
     globAngleChange += (Math.PI * 2)/(360 * speed)
     requestAnimationFrame(animate)
+
 }
 
 animate()

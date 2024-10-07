@@ -22,8 +22,7 @@ let pages = [{
   title: "check us out on social media",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non tellus orci ac auctor augue mauris. Consequat interdum varius sit amet. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius. Nullam ac tortor vitae purus faucibus ornare suspendisse sed. Interdum consectetur libero id faucibus. Integer vitae justo eget magna fermentum. Sit amet consectetur adipiscing elit duis tristique. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Laoreet sit amet cursus sit amet dictum. Odio eu feugiat pretium nibh ipsum consequat nisl vel. Elementum curabitur vitae nunc sed velit dignissim. Est velit egestas dui id ornare. Morbi leo urna molestie at elementum eu facilisis sed. Nec nam aliquam sem et tortor consequat. Quis varius quam quisque id. Sit amet risus nullam eget felis eget nunc lobortis mattis. Pharetra diam sit amet nisl suscipit. Ornare arcu dui vivamus arcu felis bibendum ut. Natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Nibh nisl condimentum id venenatis a condimentum. Porta nibh venenatis cras sed felis. Nibh nisl condimentum id venenatis a condimentum. Aliquam faucibus purus in massa. Cras tincidunt lobortis feugiat vivamus. Massa enim nec dui nunc mattis enim ut tellus. Vestibulum morbi blandit cursus risus at ultrices mi tempus. Sollicitudin aliquam ultrices sagittis orci a. Adipiscing enim eu turpis egestas. Vel pretium lectus quam id leo. Sit amet mattis vulputate enim. Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Cursus risus at ultrices mi tempus imperdiet nulla. Sit amet justo donec enim diam vulputate ut pharetra sit. Sapien eget mi proin sed libero enim sed. Massa tincidunt nunc pulvinar sapien. Id aliquet lectus proin nibh nisl condimentum id. Turpis egestas sed tempus urna. Platea dictumst vestibulum rhoncus est pellentesque elit. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Proin sed libero enim sed. Diam sit amet nisl suscipit adipiscing bibendum est ultricies integer. Egestas erat imperdiet sed euismod nisi porta lorem mollis. Velit egestas dui id ornare arcu odio. Nibh nisl condimentum id venenatis a."
 }]
-function App() {  
-
+function App(){ 
     return(
     <div> 
       <h1 className = "nav_bar"></h1>
@@ -31,5 +30,4 @@ function App() {
       </div>
       )
 }
-
 export default App

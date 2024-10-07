@@ -40,7 +40,7 @@ class Parent extends Component{
     }
 
     fetchStrains(){ 
-        fetch('https://server-t9dr.onrender.com/strains')
+        fetch('http://solflowernm.com:3000/strains')
         .then((res) => { 
             if(!res.ok){ 
                 console.error('issue fetching table')
@@ -77,7 +77,9 @@ class Parent extends Component{
         return(
             <div className = "main">
                 <LogoBar />
+                
                 <canvas id = "solflowernm_logo" ></canvas>
+                
                 <div className = "parent"> 
                 <p className = "entertainment">for educational purposes only</p>
                     <Navbar 
@@ -99,6 +101,7 @@ class Parent extends Component{
                     <p>SolFlowerFarm LLC</p>
                     <p>(505)-553-2557</p>
                     <p>solflower27@gmail.com</p>
+                    <a href='http://solflowernm.com:3000/login'>employee login</a>
                     <br></br>
                     </div>
                 </footer>

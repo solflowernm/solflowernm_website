@@ -1,0 +1,49 @@
+.sidebar{ 
+    position: absolute;
+    border-radius: 14px;
+    background-color: rgb(91, 179, 91);
+    text-align: center;
+    right: 0; 
+    width: 20%; 
+    max-height: 0; 
+    transition: max-height 325ms ease-in-out, opacity 500ms ease-out; 
+    opacity: 0; 
+}
+
+.sidebar.active{ 
+    transition: max-height 325ms ease-in-out, opacity 500ms ease-in; 
+    max-height: 100vh; 
+    opacity: 1;
+    z-index: 2;
+}
+
+.hamburger{ 
+    transition: 200ms; 
+    display: inline-block;
+    opacity: 0.5;
+    text-align: right;
+    color: white; 
+    /* border: 2px solid rgb(255, 255, 255);  */
+    width: 20%;
+    z-index: 1;
+    
+}
+.hamburger.active{ 
+    transition: 200ms; 
+    rotate: 90deg;
+
+}
+.sidebar_content{ 
+    border-radius: 4px; 
+    margin: 10px; 
+    /* background-color: rgb(139, 205, 130); */
+    padding: 6px; 
+    position: relative; 
+
+    text-align: center;
+    display: block; 
+}
+.sidebar_content:hover{ 
+    color: rgb(189, 229, 184);
+
+}

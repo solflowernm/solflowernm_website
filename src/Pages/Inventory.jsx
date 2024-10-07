@@ -1,6 +1,7 @@
 function Menu({strains, viewStrain}){ 
     let render
     console.log(strains)
+    
     strains == null ? 
     render = <p>loading...</p> : 
     render = <div>
@@ -19,7 +20,7 @@ function Menu({strains, viewStrain}){
                     <td>
                         yes
                     </td>
-                    <td onClick = {() => viewStrain(strain)}>view more</td>
+                    <td  className={strain.strain_type + '_table'} onClick = {() => viewStrain(strain)}>view more</td>
                 </tr>
             ))}
             </tbody>
@@ -32,7 +33,6 @@ function Menu({strains, viewStrain}){
             <br></br>
             <h1>Menu</h1>
             {render}
-            {/* <p>coming soon!</p> */}
             </div>
     )
 }
